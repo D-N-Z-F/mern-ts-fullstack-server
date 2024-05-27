@@ -1,0 +1,4 @@
+# This file contains files you don't want to push to GitHub
+
+/node_modules
+.env
