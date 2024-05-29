@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const { PORT } = process.env;
+const { PORT, HOST } = process.env;
 
 connect();
 app.use(cors());
@@ -16,4 +16,4 @@ app.use("/users", require("./controllers/users"));
 app.use("/songs", require("./controllers/songs"));
 app.use("/playlists", require("./controllers/playlists"));
 app.use("/likes", require("./controllers/likes"));
-app.listen(PORT || 4000, () => console.log(`App is running on PORT: ${PORT}`));
+app.listen(PORT, HOST, () => console.log(`App is running on PORT: ${PORT}`));
