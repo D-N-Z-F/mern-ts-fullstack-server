@@ -6,6 +6,8 @@ dotenv.config();
 
 const app = express();
 const { PORT, HOST } = process.env;
+const port = PORT ? parseInt(PORT) : 8000;
+const host = HOST ? HOST : "0.0.0.0";
 
 connect();
 app.use(cors());
@@ -16,6 +18,6 @@ app.use("/users", require("./controllers/users"));
 app.use("/songs", require("./controllers/songs"));
 app.use("/playlists", require("./controllers/playlists"));
 app.use("/likes", require("./controllers/likes"));
-app.listen(PORT, HOST, () =>
+app.listen(port, host, () =>
   console.log(`App is running on, HOST: ${HOST}, PORT: ${PORT}`)
 );
