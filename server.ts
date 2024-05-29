@@ -16,4 +16,4 @@ app.use("/users", require("./controllers/users"));
 app.use("/songs", require("./controllers/songs"));
 app.use("/playlists", require("./controllers/playlists"));
 app.use("/likes", require("./controllers/likes"));
-app.listen(PORT, () => console.log(`App is running on PORT: ${PORT}`));
+app.listen(PORT || 4000, () => console.log(`App is running on PORT: ${PORT}`));
